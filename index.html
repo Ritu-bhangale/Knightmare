@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knightmare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+
+<body>
+    <div class="cont">
+        <img src="Desktop - 18.png" alt="" id="background">
+        <nav>
+            <div class="knight">
+                <img src="logo.png" alt="" class="logo">
+            </div>
+            <a href="#" id="home">Home</a>
+            <a href="./About.html" id="abt">About</a>
+            <a href="./cart.html">
+                <div id="cart">
+                    <p>Cart</p>
+                    <p id="paisa">1.6M $</p>
+                    <i class="fa fa-shopping-cart" style="font-size: 21px;
+                    color: rgba(255, 0, 46, 0.97);
+                    margin-left: 4vh;
+                    margin-top: 0.5vh;"></i>
+                </div>
+            </a>
+            <a href="./call.html">
+                <div id="call">
+                    <img src="fluent_person-call-20-filled.png" alt="" id="tele">
+                    <p>Book a Call</p>
+                </div>
+            </a>
+        </nav>
+    </div>
+    <div class="landing" id="landing">
+        <div class="home-head">
+            <h1>Let me fight for you!</h1>
+            <!-- <a href="./atom.html"><div class="button"> Stalk Me <i class="fa fa-caret-right"></i></div></a> -->
+        </div>
+    </div>
+    <section class="row">
+        <div class="nine columns">
+          <div class="coverflow top10 bot10">
+            <a class="prev-arrow"></a>
+            <a href=""><img src="1.png" class="coverflow__image" /></a>
+            <a href=""><img src="2.png" class="coverflow__image" /></a>
+            <a href=""><img src="3.png" class="coverflow__image"/></a>
+            <a href=""><img src="4.png" class="coverflow__image"/></a>
+            <a href=""><img src="5.png" class="coverflow__image"/></a>
+            <a class="next-arrow"></a>
+          </div>
+        </div>
+      </section>
+     <footer>
+         <div class="column1">
+             <img src="logo.png" alt="">
+             <p>Earth | Jupiter | Mars</p>
+         </div>
+         <div class="column2">
+             <h2>Support</h2>
+             <p>FAQ</p>
+             <p>Troubleshooting</p>
+             <p>User guide</p>
+             <p>Waste Management</p>
+         </div>
+         <div class="column3">
+             <h2>About Knightmare</h2>
+             <p>Our brand</p>
+             <p>Retail shoes</p>
+             <p>Bulk Order</p>
+             <p>Declaration</p>
+         </div>
+         <div class="column4">
+             <p>Chat with our Virtual AI bot <br> (24/7 Live Agent Support)</p>
+             <button>Chat Now</button>
+             <div class="icons-footer">
+                 <i class="fa fa-facebook-f fa-2x"></i>
+                 <i class="fa fa-twitter fa-2x"></i>
+                 <i class="fa fa-instagram fa-2x"></i>
+                 <i class="fa fa-pinterest fa-2x"></i>
+             </div>
+         </div>
+     </footer>
+     <script>
+         var a = document.getElementsByTagName("a");
+var cfImg = document.getElementsByClassName("coverflow__image")
+
+var scaleI = 0;
+for (scaleI; scaleI < a.length; scaleI++) {
+  if (scaleI === 3) {
+    continue;
+  } else {
+    a[scaleI].style.cursor = "default";
+    a[scaleI].addEventListener("click", prevDef);
+  }
+}
+
+function prevDef(e) {
+  e.preventDefault();
+}
+
+function forScale(coverflowPos) {
+  for (scaleI = 0; scaleI < a.length; scaleI++) {
+    a[scaleI].style.cursor = "default";
+    a[scaleI].addEventListener("click", prevDef);
+  }
+  for (scaleI = 0; scaleI < cfImg.length; scaleI++) {
+    if (cfImg[scaleI].getAttribute("data-coverflow-index") == coverflowPos) {
+      cfImg[scaleI].parentElement.style.cursor = "pointer";
+      cfImg[scaleI].parentElement.removeEventListener("click", prevDef);
+    }
+  }
+}
+//end added by Chase
+
+function setupCoverflow(coverflowContainer) {
+  var coverflowContainers;
+
+  if (typeof coverflowContainer !== "undefined") {
+    if (Array.isArray(coverflowContainer)) {
+      coverflowContainers = coverflowContainer;
+    } else {
+      coverflowContainers = [coverflowContainer];
+    }
+  } else {
+    coverflowContainers = Array.prototype.slice.apply(document.getElementsByClassName('coverflow'));
+  }
+
+  coverflowContainers.forEach(function(containerElement) {
+    var coverflow = {};
+    var prevArrows, nextArrows;
+
+    //capture coverflow elements
+    coverflow.container = containerElement;
+    coverflow.images = Array.prototype.slice.apply(containerElement.getElementsByClassName('coverflow__image'));
+    coverflow.position = Math.floor(coverflow.images.length / 2) + 1;
+
+    //set indicies on images
+    coverflow.images.forEach(function(coverflowImage, i) {
+      coverflowImage.dataset.coverflowIndex = i + 1;
+    });
+
+    //set initial position
+    coverflow.container.dataset.coverflowPosition = coverflow.position;
+
+    //get prev/next arrows
+    prevArrows = Array.prototype.slice.apply(coverflow.container.getElementsByClassName("prev-arrow"));
+    nextArrows = Array.prototype.slice.apply(coverflow.container.getElementsByClassName("next-arrow"));
+
+    //add event handlers
+    function setPrevImage() {
+      coverflow.position = Math.max(1, coverflow.position - 1);
+      coverflow.container.dataset.coverflowPosition = coverflow.position;
+      //call the functin forScale added
+      forScale(coverflow.position);
+    }
+
+    function setNextImage() {
+      coverflow.position = Math.min(coverflow.images.length, coverflow.position + 1);
+      coverflow.container.dataset.coverflowPosition = coverflow.position;
+      //call the function Chase added
+      forScale(coverflow.position);
+    }
+
+    function jumpToImage(evt) {
+      coverflow.position = Math.min(coverflow.images.length, Math.max(1, evt.target.dataset.coverflowIndex));
+      coverflow.container.dataset.coverflowPosition = coverflow.position;
+      //start added by Chase
+      setTimeout(function() {
+        forScale(coverflow.position);
+      }, 1);
+      //end added by Chase
+    }
+
+    function onKeyPress(evt) {
+      switch (evt.which) {
+        case 37: //left arrow
+          setPrevImage();
+          break;
+        case 39: //right arrow
+          setNextImage();
+          break;
+      }
+    }
+    prevArrows.forEach(function(prevArrow) {
+      prevArrow.addEventListener('click', setPrevImage);
+    });
+    nextArrows.forEach(function(nextArrow) {
+      nextArrow.addEventListener('click', setNextImage);
+    });
+    coverflow.images.forEach(function(image) {
+      image.addEventListener('click', jumpToImage);
+    });
+    window.addEventListener('keyup', onKeyPress);
+  });
+}
+
+setupCoverflow();
+     </script>
+</body>
+</html>

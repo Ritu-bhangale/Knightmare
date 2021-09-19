@@ -1,0 +1,250 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    overflow: hidden;
+}
+.knight{
+    display: flex;
+}
+#background{
+    width: 100%;
+    position: absolute;
+    z-index: -10;
+    /* left: -0.5em; */
+}
+nav{
+display: flex;
+}
+#k{
+    margin-top: 3vh;
+    margin-left: 6vw;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: normal;
+    font-size: 400%;
+    color: #FFFFFF;
+}
+#mare{
+    margin-left: 0.7vw;
+    margin-top: 10vh;
+    font-family: 'Source Code Pro', monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 150%;
+    color: #FF002E;
+
+}
+#home{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100%;
+    color: rgba(255, 0, 46, 0.97);
+    cursor: pointer;
+    margin-top: 11vh;
+    margin-left: 10vw;
+}
+#abt{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100%;
+    color: rgba(255, 0, 46, 0.97);
+    cursor: pointer;
+    margin-top: 11vh;
+    margin-left: 3vw;
+}
+#home:hover,#abt:hover{
+    color: #FFFFFF;
+}
+#cart{
+    margin-top: 10vh;
+    margin-left: 7vw;
+    border: 2px solid rgba(255, 0, 46, 0.97);
+    text-align: center;
+    padding: 4px;
+    border-radius: 26px;
+    display: flex;
+    cursor: pointer;
+    text-decoration: none;
+    width: 12vw;
+}
+#cart p{
+    color: rgba(255, 0, 46, 0.97);
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-left: 1vw;
+    font-size: 92%;
+}
+#cart #paisa{
+    color: rgba(245, 241, 242, 0.97);
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 0.8vh;
+    font-size: 13px;
+    margin-left: 1vw;
+}
+#paisa{
+    font-size: 70%;
+}
+#call{
+    display: flex;
+    border-radius: 29px;
+    height: 32px;
+    width: 162px;
+    margin-top: 10vh;
+    margin-left: 14vw;
+    padding: 5px;
+    cursor: pointer;
+}
+#call p{
+    color: rgba(252, 247, 248, 0.97);
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-left: 12px;
+    font-size: 93%;
+}
+#logo{
+    height: 35px;
+    margin-top: 8.5vh;
+    margin-left: 1vw;
+}
+
+#tele{
+    height: 24px;
+    margin-top: 2px;
+}
+.logo{
+    width: 20vw;
+    margin-left: 5vw;
+    margin-top: 1vh;
+}
+
+
+
+
+/* about us css */
+body{
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.4rem;
+    font-size: .8rem;
+}
+
+h1{
+    font-size: 2rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    
+}
+
+.about-para{
+    width: 50%;
+    margin-left: 5vw;
+}
+
+#image-3{
+    width: 60%;
+    margin-left: 10vw;
+    height: auto;
+    z-index: 100;
+    
+}
+.others{
+    width: 80%;
+    margin: auto;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-around;
+}
+.others img{
+    width: 15vw;
+    
+}
+
+
+
+footer{
+    color: white;
+    display: flex;
+    margin-top: 10vh;
+    font-family: 'Raleway';
+    background-color: #010823;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+.column1 img{
+    width: 15vw;
+    margin-bottom: 1vh;
+}
+.column1,.column2,.column3,.column4{
+    margin-left: 4vw;
+}
+.column2,.column3,.column4{
+    margin-left: 7vw;
+}
+footer h2{
+    margin-bottom: 5vh;
+}
+footer p{
+    margin-bottom: 1vh;
+    font-size: 90%;
+    cursor: pointer;
+}
+footer p:hover{
+    color: #FF002E;
+}
+.column2{
+    margin-left: 20vw;
+
+}
+.column4 p{
+    font-size: 100%;
+    margin-bottom: 2vh;
+}
+.column4 button{
+    background-color: transparent;
+    border-color: white;
+    padding: 1vh 2vw;
+    color: white;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+.column4 button:hover{
+    background-color: #FF002E;
+    cursor: pointer;
+}
+.icons-footer i{
+    margin-right: 1vw;
+}
+.icons-footer i:hover{
+    color: #FF002E;
+    cursor: pointer;
+}
